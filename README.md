@@ -20,16 +20,16 @@ After configuring the _RPi_ to boot from USB, it is time to prepare the installa
 
 The same disk that will be targeted as the destination of the new operating system is going to be used as installation media. To prepare the disk for the Debian installer initialization, follow the steps below:
 
+> [!CAUTION]
+> In my case, the external disk that will later be connected to the _RPi_ is recognized as `/dev/sda` when connected to my computer. Remember to confirm the device before proceeding! Executing the commands below against the wrong device will cause data loss!
+
+> [!TIP]
+> To confirm the device, you can run `lsblk` before and after connecting the disk to your computer. The use of the `lsblk` command allows for an easy way of identifying the new device.
+
+> [!WARNING]
+> For the rest of this document, I will continue to use `/dev/sda`. Remember to adjust the device path accordingly to your environment!
+
 1. Connect the disk to a Linux machine and create the first partition:
-
-   > [!CAUTION]
-   > In my case, the external disk that will later be connected to the _RPi_ is recognized as `/dev/sda` when connected to my computer. Remember to confirm the device before proceeding! Executing the commands below against the wrong device will cause data loss!
-
-   > [!TIP]
-   > To confirm the device, you can run `lsblk` before and after connecting the disk to your computer. The use of the `lsblk` command allows for an easy way of identifying the new device.
-
-   > [!WARNING]
-   > For the rest of this document, I will continue to use `/dev/sda`. Remember to adjust the device path accordingly to your environment!
 
    ```bash
    fdisk /dev/sda << EOF
