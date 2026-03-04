@@ -94,13 +94,13 @@ At this stage, after a few seconds, the Debian installer should show up on the s
 
 The Debian installation is straight forward however, the configuration required to properly make use of full disk encryption can lead to some confusion. The Debian project releases a new stable version [approximately every 2 years][07]. Whenever a new stable version is released, I like to install it from scratch.
 
-Considering the requirement of making use of full disk encryption, the interval between Debian stable releases and the number of installations I usually perform, I automated the installation by using a preseed file that can be found [here][08]. More information about Debian preseed files can be found [here][09].
+Considering the requirement of making use of full disk encryption, the interval between Debian stable releases and the number of installations I usually perform, I automated the installation by using a [preseed file][08] that is part of this project. More information about Debian preseed files can be found at [this Debian wiki page][09].
 
 ### 🌱 The preseed file
 
 The preseed file is self explanatory however it is important to mention some details:
 
-When using the preseed file available [here][08], download it to your local machine, search for `changeme` and replace all entries configuring the username, the user full name, user password, root password and full disk encryption password of your target Debian installation. Also search for `late_command string` and adjust the `github.com` URL to match the latest available release of the [Raspberry Pi 4 UEFI Firmware Image][05].
+When using the [preseed file][08] that is part of this project, download it to your local machine, search for `changeme` and replace all entries configuring the username, the user full name, user password, root password and full disk encryption password of your target Debian installation. Also search for `late_command string` and adjust the `github.com` URL to match the latest available release of the [Raspberry Pi 4 UEFI Firmware Image][05].
 
 With the preseed file ready, it is time to make it available to the Debian installer. To do so, using a terminal, navigate to the folder where the preseed file is and start a temporary webserver using the following python command: `python3 -m http.server 8000`.
 
